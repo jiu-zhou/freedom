@@ -1,0 +1,41 @@
+<body>
+    <ul>    
+        <li class="red">111</li>
+        <li>222</li>
+        <li class="red">333</li>
+        <li>444</li>
+    </ul>
+</body>
+<script>
+  function findInArr(arr,sclass) {            //去重
+    for(var i = 0;i < arr.length;i ++)
+    if(arr[i] == sclass){
+      return  true;
+      }
+    }
+    return false;
+  }
+  function $(obj,scalss) {                   //获取class
+  var aRes = [];
+  if(obj.getElementsByClassName){            //这个if判断是用来兼容的
+     aRes = obj.getElementsByClassName(sclass);
+     }else{
+     var aEl = obj.getElementsByTagName('*');
+     for (var i = 0;i < aEl.length;i ++){
+         var aClass = aEl[i].className.split(' ');
+         if(findInArr(aClass,sclass)){
+         aRes.push(aEl[i];
+         }
+        }
+       }
+      retuen  aRes;
+    }
+    
+   window.onload = function(){
+        var oUl = document.getElementByTagName('ul')[0];
+        var aRed = $(oUl,'red');
+        for(var i =0;i <aRed.length;i ++){
+        aRed[i].stylebackground = 'red';
+       }
+      }
+   
