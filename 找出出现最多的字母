@@ -1,0 +1,19 @@
+var str =  'jdkjdkljlkdjjdkljdlkjdkljaljdhbnmvgjqggjfdjhjdafjlhdf'
+var  arr = str.split('');           //利用spilt将str分割组成一个数组
+var json = {};
+for(var i = 0;i < arr.length;i ++){
+   if(json[arr[i]]){                //利用这个判断和json的特性来确定每个字母出现的次数
+     json[arr[i]]++
+     }else{
+     json[arr[i]]) = 1
+     }
+    }
+    var arr2 = [];
+    for(var i in json){            //遍历这个json，将每一个字母与出现次数对应起来并插入arr2中
+    arr2.push({code : 1,count:json[i])
+    }
+    arr2.sort(function(a,b){       //利用sort来排序
+       return b - a;               //从大到小排序
+       }
+       )
+    document.write(`字母出现最多的次数为${arr2[0].code},这个字母是${arr2[0].count}`）
