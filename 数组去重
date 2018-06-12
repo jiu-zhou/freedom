@@ -1,0 +1,10 @@
+var arr = [1,2,2,4,54,6,2,4,7,5,6,5]
+var json = {}
+for (var i =0; i < arr.length; i ++){
+ json[arr[i]] = 1;                     //利用for循环和json的特性将arr的每一个值加入json变成key值。且key值并不重复。
+ }
+ var arr2 = [];
+ for(var i in json){                   //遍历整个json数据 提取json的key值并插入arr2数组中
+   arr2.push(i);
+   }
+  document.write(arr2);
